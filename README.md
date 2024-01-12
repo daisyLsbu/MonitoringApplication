@@ -9,7 +9,12 @@ Time-series Influx DB is used to store the data for all hosts. which can be used
 InfluxDBClient for connecting to Influx DB server.
 Grafana to manage and monitor processes.
 ## Installation
-
-
+Run the setup.sh (after uncommenting the text - for the first time)
+run build.sh
+update host.csv file with the hosts to be monitored in the network
+## Test
+To check if everything is working fine, you can use collectDisplayTable.py file and follow instruction
+update the influx DB credential in influcDBsuite.py
+execute run.sh
 
 

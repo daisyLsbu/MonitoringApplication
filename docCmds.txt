@@ -1,0 +1,5 @@
+#########influx db installation :
+https://medium.com/yavar/install-and-setup-influxdb-on-ubuntu-20-04-22-04-3d6e090ec70c
+user: user/Password123../LSBU/telemetry
+zTXBuom_LxYD98-9gcyyDw9mHsCrtJUVVUfwsoGBxzQ3DcqwFiamo9ZtPucDfRaWEkOi-yrnqU1WFse9M67Wng==
+export INFLUXDB_TOKEN=eFTnKNbRWWdPmLpleqeLLhhMwkQP1FbBY1RaVPnbbDgEudRqrCNuW6Z5aVTyH2sRGMt5NgSF_Lv08PadOEKOuA==

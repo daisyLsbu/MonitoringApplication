@@ -9,9 +9,7 @@ Time-series Influx DB is used to store the data for all hosts. which can be used
 InfluxDBClient for connecting to Influx DB server.
 Grafana to manage and monitor processes.
 ## Installation
-bash
-sh
-shell
+
 
 
 

@@ -16,5 +16,11 @@ update host.csv file with the hosts to be monitored in the network
 To check if everything is working fine, you can use collectDisplayTable.py file and follow instruction
 update the influx DB credential in influcDBsuite.py
 execute run.sh
+This will display the collected data on your terminal. If Grafana is running then it should reflect there
+as well.
+Note: The code assumes that the user has access to a local instance of InfluxDB
+and Grafana. Please make sure to install and configure them properly before using this software.</s>
+
+use test_data.json file for sample data
 
 

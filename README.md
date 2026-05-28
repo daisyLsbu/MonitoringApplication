@@ -6,6 +6,28 @@ Developed in python, list of host is provided in csv file.
 AIOhttp for Asynchronous HTTP Client/Server communication with the hosts.
 Time-series Influx DB is used to store the data for all hosts. which can be used to plot and analyse using Grafana.
 
+### Part 3 — Monitoring Application
+
+**Repository:** [`monitoringapplication`](https://github.com/daisyLsbu/monitoringapplication)
+
+The **central data aggregation and storage layer**. This application runs continuously, polling the Telemetry Application on each host and persisting all metrics into a time-series database. The stored data feeds both the reactive migration logic and the LSTM model training/inference.
+
+**What it does:**
+- Reads a CSV file listing all hosts in the network
+- Asynchronously polls each host's Telemetry App endpoint using `aiohttp`
+- Writes all incoming data to InfluxDB (time-series format)
+- Exposes data for visualisation via Grafana dashboards
+
+**Key technologies:**
+- Python
+- `aiohttp` — asynchronous HTTP client for concurrent host polling
+- InfluxDB — time-series storage
+- Grafana — visualisation and dashboarding (optional but recommended)
+
+**Configuration:** provide a `hosts.csv` file listing the IP/hostname of every node to monitor.
+
+---
+
 # Requirement
 InfluxDBClient for connecting to Influx DB server.
 Grafana to manage and monitor processes.

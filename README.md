@@ -82,8 +82,36 @@ Two measurements are written per polling cycle:
 | `nw_usage` | Container network usage (bytes) |
 
 ---
+## Folder structure
+- The Script folder has all the script required for running this.
+- collectorAsync.py and influxdbsuite.py are core files
+- requirement.txt - package detail - used in script
+- nodes.csv is used for configuration
+- setting.json and test.html is used to test incoming data without influx db by using collectDisplaytable.py
+- test_data.json is used as sample data incase no active nodes available
+- start with trouble shoot file if you want detail on how to debug and use the application
 
 ## Getting Started
+
+1. Download the `setup.sh` script and copy it to the location where you want the application to run.
+2. Execute the setup script:
+```bash
+   ./setup.sh
+```
+3. Navigate into the application directory:
+```bash
+   cd MonitoringApplication
+   chmod +x scripts/deploy.sh
+   chmod +x scripts/build.sh
+```
+
+4. Run the application using **one** of the following options:
+    - **Option A — Use the deploy script:**  source scripts/deploy.sh
+    - **Option B — Use Build then run:** source scripts/build.sh ./scripts/run.sh
+    -  **Option C — Manual execution:**
+      Run the commands from `build.sh` and `run.sh` individually, one at a time.
+
+Or follow below steps and check Troubleshoot file as well
 
 ### Prerequisites
 
@@ -97,19 +125,23 @@ Two measurements are written per polling cycle:
 ```bash
 git clone https://github.com/daisyLsbu/MonitoringApplication.git
 cd MonitoringApplication
+git pull
 ```
 
-Run the setup script (uncomment lines on first use), then build:
+Run the build script (uncomment lines on first use), then run:
 
 ```bash
-bash scripts/setup.sh
-bash scripts/build.sh
+source scripts/build.sh
+scripts/run.sh
 ```
 
 Or install dependencies directly:
 
 ```bash
-pip install -r requirement.txt
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ### Configuration
@@ -146,8 +178,9 @@ python collectorAsync.py
 ```
 
 The default polling interval is 1 second. To change it, edit the `asyncio.run(storeData(interval=1))` call at the bottom of `collectorAsync.py`.
+If Grafana is running and connected to the same InfluxDB instance, it will update automatically at the same time.
 
-### Verifying without Grafana
+### Verifying without Grafana and without influxDB
 
 Use the terminal display utility to confirm data is being collected and stored correctly:
 
@@ -155,7 +188,7 @@ Use the terminal display utility to confirm data is being collected and stored c
 python collectDisplaytable.py
 ```
 
-This prints collected metrics in a formatted table to the console. If Grafana is running and connected to the same InfluxDB instance, it will update automatically at the same time.
+This prints collected metrics in a formatted table to test.html. 
 
 ### Testing with sample data
 

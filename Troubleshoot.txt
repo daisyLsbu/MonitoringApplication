@@ -4,4 +4,8 @@ user: user/Password123../LSBU/telemetry
 zTXBuom_LxYD98-9gcyyDw9mHsCrtJUVVUfwsoGBxzQ3DcqwFiamo9ZtPucDfRaWEkOi-yrnqU1WFse9M67Wng==
 export INFLUXDB_TOKEN=eFTnKNbRWWdPmLpleqeLLhhMwkQP1FbBY1RaVPnbbDgEudRqrCNuW6Z5aVTyH2sRGMt5NgSF_Lv08PadOEKOuA==
 
+missing requirement:
+pip install pandas
+pip install aiohttp
+
 

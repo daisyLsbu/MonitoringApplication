@@ -7,6 +7,7 @@ import pandas as pd
 import aiohttp
 import asyncio
 from pprint import PrettyPrinter
+from tabulate import tabulate
 
 template_header = """ <!DOCTYPE html>
                       <html lang="en">

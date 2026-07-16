@@ -189,6 +189,16 @@ python collectDisplaytable.py
 ```
 
 This prints collected metrics in a formatted table to test.html. 
+The HYML file gets updated every few second. Tp get the browser updated automatically, open html file with live server:
+Install the Live Server extension
+settings.json file has port details where Live Server runs on.
+update setting if you need to update the port
+
+Open the HTML file (or its parent folder) in VS Code
+"Open HTML file with Live Server"
+
+Your browser opens automatically at:
+http://127.0.0.1:5501/test.html
 
 ### Testing with sample data
 
